@@ -1,0 +1,26 @@
+body {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#results {
+    text-align: center;
+}
+
+#buttons {
+    text-align: center;
+}
+
+button {
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: black solid 2px;
+}
+
+#score {
+    text-align: center;
+
+}
