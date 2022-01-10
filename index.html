@@ -4,73 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="script.js" defer></script>
+    <title>RPS</title>
 </head>
 <body>
-    <script>
-        let win = 0;
-        let lose = 0;
+    <div id="results">
+        <h1 id="winlose">Choose your hand</h1>
+        <p><span id="compChoice"></span></p>
 
-        function computerPlay() {
-            let items = Array("Rock", "Paper", "Scissors");
-            let item = items[Math.floor(Math.random()*items.length)];
-
-            return item;
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            let comp = computerSelection.toLowerCase();
-            if(playerSelection == 'rock') {
-                if(comp == "rock") {
-                    return "It's a Tie";
-                }
-                else if(comp == 'paper') {
-                    lose += 1;
-                    return "You lose. Paper beats rock.";
-                }
-                else if(comp == 'scissors') {
-                    win += 1;
-                    return "You win!!! Rock beats scissors";
-                }
-            }
-            if(playerSelection == 'paper') {
-                if(comp == "rock") {
-                    win += 1;
-                    return "You win!!! Paper beats rock";
-                }
-                else if(comp == 'paper') {
-                    return "It's a tie";
-                }
-                else if(comp == 'scissors') {
-                    lose += 1;
-                    return "You lose. Scissors beats paper";
-                }
-            }
-            if(playerSelection == 'scissors') {
-                if(comp == "rock") {
-                    lose += 1;
-                    return "You lose. Rock beats scissors";
-                }
-                else if(comp == 'paper') {
-                    win += 1;
-                    return "You win!!! Scissors beats paper.";
-                }
-                else if(comp == 'scissors') {
-                    return "It's a tie.";
-                }
-            }
-        }
-        
-        function game() {
-            for(i=0;i<5;i++) {
-                let player = prompt("Rock, Paper, or Scissors: ").toLowerCase();
-                let computer = computerPlay();
-                console.log(playRound(player, computer));
-                
-            }
-            console.log(`Wins: ${win}\nLose: ${lose}`);
-        }
-        game();
-    </script>
+    </div>
+    <button id="rock" class="btn">Rock</button>
+    <button id="paper" class="btn">Paper</button>
+    <button id="scissors" class="btn">Scissors</button>
+    <div id="score">
+        <p>Wins: <span id="wins"></span></p>
+        <p>Loses: <span id="loses"></span></p>
+        <p>Ties: <span id="ties"></span></p>
+    </div>
 </body>
 </html>
